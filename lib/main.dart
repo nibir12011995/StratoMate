@@ -10,11 +10,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      //* Routes for world time integartion
       routes: {
         '/loading': (context) => Loading(),
         '/home': (context) => Home(),
         '/location': (context) => ChooseLocation(),
       },
+
+      //* weather app main screen
       theme: ThemeData.dark(),
       home: LoadingScreen(),
     );
