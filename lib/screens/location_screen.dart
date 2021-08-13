@@ -120,7 +120,9 @@ class _LocationScreenState extends State<LocationScreen> {
                     ),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/loading');
+                    },
                     child: Icon(
                       Icons.access_time,
                       size: 50.0,
