@@ -1,10 +1,28 @@
 import '../services/location.dart';
 import '../services/networking.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 const apiKey = '2ac386a95a028e80a306c26f75efd0af';
 const openWatherMapURL = 'http://api.openweathermap.org/data/2.5/weather';
 
 class WeatherModel {
+  static Future<List<String>> searchCities({String query}) async {
+    final limit = 3;
+    final url =
+        'https://api.openweathermap.org/geo/1.0/direct?q=$query&limit=$limit&appid=$apiKey';
+
+    final response = await http.get(Uri.parse(url));
+    final body = json.decode(response.body);
+
+    return body.map<String>((json) {
+      final city = json['name'];
+      final country = json['country'];
+
+      return '$city, $country';
+    }).toList();
+  }
+
   Future<dynamic> getCityWather(String cityName) async {
     String url = '$openWatherMapURL?q=$cityName&appid=$apiKey&units=metric';
     var weatherData = await NetworkingHelper(url: url).getData();
