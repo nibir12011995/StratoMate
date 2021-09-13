@@ -9,9 +9,9 @@ class TaskScreen extends StatefulWidget {
 
 class TaskScreenState extends State {
   List<Task> tasks = [
-    Task(name: 'Task A'),
-    Task(name: 'Task B'),
-    Task(name: 'Task C'),
+    Task(name: '✏️ Math Homework'),
+    Task(name: '☂️ Take umbrella'),
+    Task(name: '🌧️ Task C'),
   ];
 
   Widget build(context) {
@@ -70,13 +70,13 @@ class TaskScreenState extends State {
                 SizedBox(
                   height: 10.0,
                 ),
-                Text(
-                  '${tasks.length} Tasks',
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.white,
-                  ),
-                ),
+                // Text(
+                //   '${tasks.length} Tasks',
+                //   style: TextStyle(
+                //     fontSize: 18,
+                //     color: Colors.white,
+                //   ),
+                // ),
                 SizedBox(
                   height: 30.0,
                 )
