@@ -114,7 +114,7 @@ class _LocationScreenState extends State<LocationScreen> {
                       );
                     },
                     child: Icon(
-                      Icons.event_note,
+                      Icons.format_list_bulleted_rounded,
                       size: 50.0,
                       color: Colors.white,
                     ),

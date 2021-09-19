@@ -8,6 +8,8 @@ class AddTaskScreen extends StatelessWidget {
   AddTaskScreen(this.addTasksCallback);
   Widget build(BuildContext context) {
     String finalTaskTitle;
+    var now = new DateTime.now();
+    print(now);
 
     return Container(
       color: Color(0xFF757575),

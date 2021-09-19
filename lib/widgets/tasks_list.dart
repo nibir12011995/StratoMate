@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'tasks_tile.dart';
 import '../models/task.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl_browser.dart';
 
 class TasksList extends StatefulWidget {
   final List<Task> tasks;
@@ -15,6 +16,7 @@ class TasksListState extends State<TasksList> {
     return ListView.builder(
       itemCount: widget.tasks.length,
       itemBuilder: (context, index) {
+        String time = widget.tasks[index].dateTime.toString();
         final item = widget.tasks[index];
         return Dismissible(
           key: Key(item.name),
@@ -30,6 +32,7 @@ class TasksListState extends State<TasksList> {
           },
           child: ListTile(
             // contentPadding: EdgeInsets.zero,
+
             title: Text(
               widget.tasks[index].name,
               style: GoogleFonts.montserrat(
@@ -42,6 +45,23 @@ class TasksListState extends State<TasksList> {
                     ? Colors.grey
                     : Colors.blueGrey[900],
               ),
+            ),
+
+            subtitle: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                // SizedBox(
+                //   height: 10.0,
+                // ),
+                Text(
+                  // widget.tasks[index].dateTime.toString(),
+                  time,
+                  style: TextStyle(
+                    color: Colors.grey[700],
+                    fontSize: 10,
+                  ),
+                ),
+              ],
             ),
 
             trailing: Checkbox(
