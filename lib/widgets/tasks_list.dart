@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'tasks_tile.dart';
 import '../models/task.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:intl/intl_browser.dart';
+// import 'package:intl/intl_browser.dart';
 
 class TasksList extends StatefulWidget {
   final List<Task> tasks;

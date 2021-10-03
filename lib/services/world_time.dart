@@ -7,7 +7,7 @@ class WorldTime {
   String time;
   String flag;
   String url;
-  bool isDayTime;
+  bool isDayTime = false;
 
   WorldTime({this.location, this.flag, this.url});
 
@@ -33,7 +33,7 @@ class WorldTime {
     } catch (e) {
       print(
           "====================  |>|>|>|>|>|>  CAUGHT ERROR  services/world_time.dart: $e");
-      time = "Could not get time data";
+      time = "No Data";
     }
   }
 }
